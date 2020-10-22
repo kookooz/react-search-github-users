@@ -6,7 +6,9 @@ const PrivateRoute = ({children,...rest}) => {
   const {isAuthenticated,user} = useAuth0()
   const isUser = isAuthenticated && user;
   return (
-  <Route {...rest} render={()=>{
+  <Route
+    {...rest} 
+    render={()=>{
     return isUser ? children: <Redirect to='/login'></Redirect>
   }} >
       </Route>
